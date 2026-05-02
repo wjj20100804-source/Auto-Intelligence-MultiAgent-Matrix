@@ -1,2 +1,25 @@
 # Auto-Intelligence-MultiAgent-Matrix
-A multi-agent automated intelligence orchestration framework based on long-context LLMs.
+
+一个专为处理海量非结构化文本和超长上下文（Long-Context）设计的自动化多智能体（Multi-Agent）情报推演框架。
+
+## 🎯 核心业务场景
+传统的大模型应用往往受限于输出字数和单次处理的条数限制，无法胜任全景式的情报推演。本项目通过编排多个专用 Agent，实现了从全网数据感知、去重清洗、长链逻辑推理到最终成稿的全自动化闭环。
+
+**系统设计原则：彻底解除大模型的输出条数与字数限制，每日 18:00 准时输出无缩水、无遗漏的深度全景简报。**
+
+## 🧩 系统架构与 Agent 矩阵
+
+* **ScrapingAgent (感知层):** 负责并发抓取全网科技创新、宏观政策及商业案件的原始资讯池。
+* **ReasoningAgent (推理层):** 系统的核心算力消耗节点。吞吐海量原始长文本，利用思维链（CoT）进行跨事件的逻辑关联与深度交叉对比。
+* **WritingAgent (输出层):** 突破常规 Token 生成限制，基于前置推理结果，生成不限字数的专业级多级标题长文。
+* **Orchestrator (中枢调度):** 基于 Python 原生守护进程构建的自动化触发机制，接管所有 Agent 的状态流转。
+
+## 🚀 运行状态
+- [x] 多源并发抓取模块已上线
+- [x] 长上下文（100K+）跨文档关联推理引擎已调通
+- [x] 每日定时（Cron: 18:00）自动化工作流运转正常
+
+## 🛠️ 快速开始
+安装依赖后，配置您的底层大模型 API Endpoint 即可启动守护进程：
+`pip install requests schedule openai feedparser`
+`python agent_system.py`
